@@ -232,8 +232,26 @@ export default {
     this.getActivity()
     this.getTeams()
     this.initRadar()
+    this.getTableColumn()
   },
   methods: {
+    getTableColumn () {
+      const param = {
+        page: 1,
+        pageSize: 10
+      }
+      // console.log('this.$http', this.$http)
+      this.$http.post('/custom/table/column', param).then(res => {
+        console.log('res', res)
+        if (res.code === 0) {
+          this.$message.success(res.message)
+        } else {
+          this.$message.success(res.message)
+        }
+      }).catch(err => {
+        console.log('err', err)
+      })
+    },
     getProjects () {
       this.$http.get('/list/search/projects').then(res => {
         this.projects = res.result && res.result.data

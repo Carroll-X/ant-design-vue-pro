@@ -22,6 +22,7 @@ export const builder = (data, message, code = 0, headers = {}) => {
 }
 
 export const getQueryParameters = (options) => {
+  console.log('getQueryParameters', options)
   const url = options.url
   const search = url.split('?')[1]
   if (!search) {
@@ -34,5 +35,6 @@ export const getQueryParameters = (options) => {
 }
 
 export const getBody = (options) => {
+  console.log('getBody', options)
   return options.body && JSON.parse(options.body)
 }
