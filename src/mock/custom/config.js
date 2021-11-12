@@ -13,7 +13,7 @@ const tableColumn = (options) => {
       scopedSlots: { customRender: 'serial' }
     },
     {
-      title: '规则编号1',
+      title: '规则编号',
       dataIndex: 'no'
     },
     {
